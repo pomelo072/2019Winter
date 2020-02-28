@@ -77,14 +77,14 @@ int IsEmpty(SqList L)
     if(L.length == 0) return 1;
     else return 0;
 }
-void MergeList(SqList La, SqList Lb, SqList *Lc)
+void MergeList(SqList La, SqList Lb, SqList &Lc)
 {
     ElemType *pa,*pb,*pc,*pa_last,*pb_last;
     pa = La.elem; pb = Lb.elem;
-    Lc->length = La.length + Lb.length;
-    Lc.elem=(ElemType)malloc(Lc->length*sizeof(ElemType));
-    pc = Lc->elem;
-    if(!Lc->elem) exit(OVERFLOW);
+    Lc.length = La.length + Lb.length;
+    Lc.elem=(ElemType*)malloc(Lc.length*sizeof(ElemType));
+    pc = Lc.elem;
+    if(!Lc.elem) exit(OVERFLOW);
     pa_last=La.elem+La.length-1;
     pb_last=Lb.elem+Lb.length-1;
     while (pa<=pa_last && pb<=pb_last)
