@@ -1,9 +1,10 @@
 #include <iostream>
 #include <queue>
-
+#include <windows.h>
 using namespace std;
 
-int main() {
+int main() 
+{
     // 1. Initialize a queue.
     queue<int> q;
     // 2. Push new element.
@@ -24,4 +25,5 @@ int main() {
     cout << "The last element is: " << q.back() << endl;
     // 7. Get the size of the queue.
     cout << "The size is: " << q.size() << endl;
+    system("pause");
 }
